@@ -1,0 +1,13 @@
+<div class="hot">
+	<div class="mainFoto">
+	</div>
+	<div class="hotConteiner">
+		<div *ngFor="let item of items" class="hotElem">
+			<div [style.background-color]=item.url>picture url {{item.url}}</div>
+			<p>name {{item.name}}</p>
+			<p>cost {{item.cost}}</p>
+			<button>BUY</button>
+			
+		</div>
+	<div>
+</div>

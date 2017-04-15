@@ -1,0 +1,14 @@
+.heder{
+		widht:100%;
+		height:80px;
+		background: black;
+		padding-top:20px;
+	}
+.logo{
+		width:150px;
+		text-align:center;
+		margin-left:20px;
+		color:#fff;
+		font-size: 25px;
+		font-family:Sans serif;
+	}
