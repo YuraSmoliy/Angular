@@ -16,6 +16,7 @@ var contact_component_1 = require("./contact.component");
 var footer_component_1 = require("./footer.component");
 var hover_directive_1 = require("./hover.directive");
 var forms_2 = require("@angular/forms");
+var http_1 = require("@angular/http");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -23,8 +24,10 @@ var AppModule = (function () {
 }());
 AppModule = __decorate([
     core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
-        declarations: [app_component_1.AppComponent, heder_component_1.HederComponent, hot_component_1.HotComponent, tours_component_1.ToursComponent, contact_component_1.ContactComponent, footer_component_1.FooterComponent, hover_directive_1.HoverDirective, forms_2.ReactiveFormsModule],
+        imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, forms_2.ReactiveFormsModule, http_1.HttpModule],
+        declarations: [app_component_1.AppComponent, heder_component_1.HederComponent, hot_component_1.HotComponent,
+            tours_component_1.ToursComponent, contact_component_1.ContactComponent, footer_component_1.FooterComponent,
+            hover_directive_1.HoverDirective],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);

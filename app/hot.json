@@ -1,0 +1,10 @@
+
+{
+	"data":
+	[
+		{"url": "app/berlin.jpg",  "name": "safsdf", "cost":11},
+		{"url": "app/egypt.jpg" ,  "name": "safsdf", "cost":13}, 
+		{"url": "app/barsik.jpg",  "name": "safsdf", "cost":14}, 
+		{"url": "app/carpath.jpg", "name": "safsdf", "cost":15}
+	]
+}

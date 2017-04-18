@@ -13,12 +13,12 @@ var forms_1 = require("@angular/forms");
 var ContactComponent = (function () {
     function ContactComponent() {
         this.myForm = new forms_1.FormGroup({
-            "userName": new forms_1.FormControl("Tom", forms_1.Validators.required),
-            "userEmail": new forms_1.FormControl("", [
+            "userName": new forms_1.FormControl("Name", forms_1.Validators.required),
+            "userEmail": new forms_1.FormControl("email", [
                 forms_1.Validators.required,
                 forms_1.Validators.pattern("[a-zA-Z_]+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}")
             ]),
-            "userPhone": new forms_1.FormControl()
+            "userMassage": new forms_1.FormControl("Massage", forms_1.Validators.required)
         });
     }
     ContactComponent.prototype.submit = function () {
@@ -29,8 +29,12 @@ var ContactComponent = (function () {
 ContactComponent = __decorate([
     core_1.Component({
         selector: 'contact-app',
-        styles: ["\n        input.ng-touched.ng-invalid {border:solid red 2px;}\n        input.ng-touched.ng-valid {border:solid green 2px;}\n    "],
-        template: "<form [formGroup]=\"myForm\" novalidate (ngSubmit)=\"submit()\">\n                    <div class=\"form-group\">\n                        <label>\u0418\u043C\u044F</label>\n                        <input class=\"form-control\" name=\"name\" formControlName=\"userName\" />\n                         \n                        <div class=\"alert alert-danger\"\n                            *ngIf=\"myForm.controls['userName'].invalid && myForm.controls['userName'].touched\">\n                            \u041D\u0435 \u0443\u043A\u0430\u0437\u0430\u043D\u043E \u0438\u043C\u044F\n                        </div>\n                    </div>\n                    <div class=\"form-group\">\n                        <label>Email</label>\n                        <input class=\"form-control\" name=\"email\" formControlName=\"userEmail\" />\n                         \n                        <div class=\"alert alert-danger\"\n                            *ngIf=\"myForm.controls['userEmail'].invalid && myForm.controls['userEmail'].touched\">\n                            \u041D\u0435\u043A\u043E\u0440\u0440\u0435\u043A\u0442\u043D\u044B\u0439 email\n                        </div>\n                    </div>\n                    <div class=\"form-group\">\n                        <label>\u0422\u0435\u043B\u0435\u0444\u043E\u043D</label>\n                        <input class=\"form-control\" name=\"phone\" formControlName=\"userPhone\" />\n                    </div>\n                    <div class=\"form-group\">\n                        <button class=\"btn btn-default\" [disabled]=\"myForm.invalid\">\n                            \u041E\u0442\u043F\u0440\u0430\u0432\u0438\u0442\u044C\n                        </button>\n                    </div>\n                </form>"
+        styleUrls: ['app/contact.component.css'],
+        /*styles: [`
+            input.ng-touched.ng-invalid {border:solid red 2px;}
+            input.ng-touched.ng-valid {border:solid green 2px;}
+        `],*/
+        template: "<form class=\"form\" [formGroup]=\"myForm\" novalidate (ngSubmit)=\"submit()\">\n                    <div class=\"form-group\">\n                        <label>Name</label>\n                        <input class=\"form-control\" name=\"name\" formControlName=\"userName\" />\n                         \n                        <div class=\"alert alert-danger\"\n                            *ngIf=\"myForm.controls['userName'].invalid && myForm.controls['userName'].touched\">\n                            \u041D\u0435 \u0443\u043A\u0430\u0437\u0430\u043D\u043E \u0438\u043C\u044F\n                        </div>\n                    </div>\n                    <div class=\"form-group\">\n                        <label>Email</label>\n                        <input class=\"form-control\" name=\"email\" formControlName=\"userEmail\" />\n                         \n                        <div class=\"alert alert-danger\"\n                            *ngIf=\"myForm.controls['userEmail'].invalid && myForm.controls['userEmail'].touched\">\n                            \u041D\u0435\u043A\u043E\u0440\u0440\u0435\u043A\u0442\u043D\u044B\u0439 email\n                        </div>\n                    </div>\n                    <div class=\"form-group\">\n                        <label>Massage</label>\n                        <input class=\"form-control\" name=\"massage\" formControlName=\"userMassage\" />\n                    </div>\n                    <div class=\"form-group\">\n                        <button class=\"btn btn-default\" [disabled]=\"myForm.invalid\">\n                            \u041E\u0442\u043F\u0440\u0430\u0432\u0438\u0442\u044C\n                        </button>\n                    </div>\n                </form>"
     }),
     __metadata("design:paramtypes", [])
 ], ContactComponent);

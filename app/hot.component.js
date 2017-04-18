@@ -15,11 +15,13 @@ var HotComponent = (function () {
         this.hotTrevelService = hotTrevelService;
         this.items = [];
     }
-    HotComponent.prototype.addItem = function (url, name, cost) {
+    /*addItem(url:string, name: string, cost: number){
+         
         this.hotTrevelService.addData(url, name, cost);
-    };
+    }*/
     HotComponent.prototype.ngOnInit = function () {
-        this.items = this.hotTrevelService.getData();
+        var _this = this;
+        this.hotTrevelService.getData().subscribe(function (data) { return _this.items = data; });
     };
     return HotComponent;
 }());

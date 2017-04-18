@@ -9,10 +9,13 @@ import { ContactComponent }  from './contact.component';
 import { FooterComponent }  from './footer.component';
 import { HoverDirective } from './hover.directive';
 import { ReactiveFormsModule }   from '@angular/forms';
+import { HttpModule }   from '@angular/http';
 
 @NgModule({
-    imports:      [ BrowserModule, FormsModule ],
-    declarations: [ AppComponent, HederComponent, HotComponent, ToursComponent,ContactComponent, FooterComponent, HoverDirective, ReactiveFormsModule ],
+    imports:      [ BrowserModule, FormsModule, ReactiveFormsModule,HttpModule  ],
+    declarations: [ AppComponent, HederComponent, HotComponent, 
+					ToursComponent,ContactComponent, FooterComponent, 
+					HoverDirective ],
     bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

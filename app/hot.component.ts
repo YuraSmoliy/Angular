@@ -14,12 +14,12 @@ export class HotComponent implements OnInit {
 	
 	constructor( private hotTrevelService:HotTrevelService){}
 	
-	addItem(url:string, name: string, cost: number){
+	/*addItem(url:string, name: string, cost: number){
          
         this.hotTrevelService.addData(url, name, cost);
-    }
+    }*/
 	
     ngOnInit(){
-        this.items = this.hotTrevelService.getData();
+        this.hotTrevelService.getData().subscribe((data)=>this.items=data);
     }
 }

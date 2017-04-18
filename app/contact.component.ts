@@ -4,13 +4,14 @@ import { FormGroup, FormControl, Validators} from '@angular/forms';
  
 @Component({
     selector: 'contact-app',
-    styles: [`
+	styleUrls: ['app/contact.component.css']
+    /*styles: [`
         input.ng-touched.ng-invalid {border:solid red 2px;}
         input.ng-touched.ng-valid {border:solid green 2px;}
-    `],
-    template: `<form [formGroup]="myForm" novalidate (ngSubmit)="submit()">
+    `],*/
+    template: `<form class="form" [formGroup]="myForm" novalidate (ngSubmit)="submit()">
                     <div class="form-group">
-                        <label>Имя</label>
+                        <label>Name</label>
                         <input class="form-control" name="name" formControlName="userName" />
                          
                         <div class="alert alert-danger"
@@ -28,8 +29,8 @@ import { FormGroup, FormControl, Validators} from '@angular/forms';
                         </div>
                     </div>
                     <div class="form-group">
-                        <label>Телефон</label>
-                        <input class="form-control" name="phone" formControlName="userPhone" />
+                        <label>Massage</label>
+                        <input class="form-control" name="massage" formControlName="userMassage" />
                     </div>
                     <div class="form-group">
                         <button class="btn btn-default" [disabled]="myForm.invalid">
@@ -43,12 +44,12 @@ export class ContactComponent{
     constructor(){
         this.myForm = new FormGroup({
              
-            "userName": new FormControl("Tom", Validators.required),
-            "userEmail": new FormControl("", [
+            "userName": new FormControl("Name", Validators.required),
+            "userEmail": new FormControl("email", [
                                 Validators.required, 
                                 Validators.pattern("[a-zA-Z_]+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}") 
                             ]),
-            "userPhone": new FormControl()
+            "userMassage": new FormControl("Massage", Validators.required)
         });
     }
      

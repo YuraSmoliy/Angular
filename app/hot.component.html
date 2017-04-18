@@ -4,7 +4,7 @@
 	</div>
 	<div class="hotConteiner">
 		<div *ngFor="let item of items" class="hotElem">
-			<div [style.background-image]=item.url class="toursPicture">picture {{item.url}}</div>
+			<img [src]=item.url class="toursPicture">>
 			<p>name {{item.name}}</p>
 			<p>cost {{item.cost}}</p>
 			<button class="buy">BUY</button>
