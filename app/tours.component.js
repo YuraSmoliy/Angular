@@ -9,28 +9,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var hot_trevel_service_1 = require("./hot-trevel.service");
-var HotComponent = (function () {
-    function HotComponent(hotTrevelService) {
-        this.hotTrevelService = hotTrevelService;
+var Tours_service_1 = require("./Tours.service");
+var ToursComponent = (function () {
+    function ToursComponent(toursService) {
+        this.toursService = toursService;
         this.items = [];
     }
-    HotComponent.prototype.addItem = function (url, name, cost) {
-        this.hotTrevelService.addData(url, name, cost);
+    ToursComponent.prototype.addItem = function (url, name, cost) {
+        this.toursService.addData(url, name, cost);
     };
-    HotComponent.prototype.ngOnInit = function () {
-        this.items = this.hotTrevelService.getData();
+    ToursComponent.prototype.ngOnInit = function () {
+        this.items = this.toursService.getData();
     };
-    return HotComponent;
+    return ToursComponent;
 }());
-HotComponent = __decorate([
+ToursComponent = __decorate([
     core_1.Component({
-        selector: 'hot-app',
-        templateUrl: 'app/hot.component.html',
-        styleUrls: ['app/hot.component.css'],
-        providers: [hot_trevel_service_1.HotTrevelService]
+        selector: 'tours-app',
+        templateUrl: 'app/tours.component.html',
+        styleUrls: ['app/tours.component.css'],
+        providers: [Tours_service_1.ToursService]
     }),
-    __metadata("design:paramtypes", [hot_trevel_service_1.HotTrevelService])
-], HotComponent);
-exports.HotComponent = HotComponent;
-//# sourceMappingURL=hot.component.js.map
+    __metadata("design:paramtypes", [Tours_service_1.ToursService])
+], ToursComponent);
+exports.ToursComponent = ToursComponent;
+//# sourceMappingURL=tours.component.js.map

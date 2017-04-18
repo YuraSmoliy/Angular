@@ -1,10 +1,25 @@
-import { Component } from '@angular/core';   
+import { Component, OnInit} from '@angular/core';
+import { Hot } from './hot';
+import { HotTrevelService } from './hot-trevel.service';
 
 @Component({
     selector: 'hot-app',
 	templateUrl: 'app/hot.component.html',
-	styleUrls: ['app/hot.component.css']				
+	styleUrls: ['app/hot.component.css'],
+	providers: [HotTrevelService]
 })
-export class HotComponent { 
-     items =[{url:"green";name:"safsdf";cost:12},{url:"green";name:"safsdf";cost:12}, {url:"green";name:"safsdf";cost:12}, {url:"green";name:"safsdf";cost:12}];
+export class HotComponent implements OnInit { 
+
+	items : Hot[]=[];
+	
+	constructor( private hotTrevelService:HotTrevelService){}
+	
+	addItem(url:string, name: string, cost: number){
+         
+        this.hotTrevelService.addData(url, name, cost);
+    }
+	
+    ngOnInit(){
+        this.items = this.hotTrevelService.getData();
+    }
 }

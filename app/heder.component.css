@@ -1,14 +1,25 @@
 .heder{
 		widht:100%;
 		height:80px;
+		display:flex;
 		background: black;
 		padding-top:20px;
+		padding-right:30px;
+		color:#fff;
+		font-family:Sans serif;
+		font-size: 25px;
+		justify-content:space-between;
 	}
 .logo{
-		width:150px;
+		width:250px;
+		display:flex;
 		text-align:center;
 		margin-left:20px;
-		color:#fff;
-		font-size: 25px;
+		font-size: 30px;
 		font-family:Sans serif;
 	}
+.nav{
+	width:300px;
+	display:flex;
+	justify-content:space-between;
+}
