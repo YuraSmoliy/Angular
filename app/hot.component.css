@@ -17,6 +17,7 @@
 		
 	}
 .hotConteiner{
+	position:relative;
 	width:100%;
 	margin-top:5px; 
 	display:flex;
@@ -24,6 +25,7 @@
 	background: black;
 }
 .hotElem{
+		
 		margin:10px;
 	    width:24%;
 		height:350px;
@@ -41,4 +43,41 @@
 	width:100px;
 	border-radius:5px;
 	background-color:white;
+}
+.buyPicture{
+	margin:auto;
+	margin-top:10px;
+	width:90%;
+	height:250px;
+	display:block;
+}
+.buyForm{
+	position:absolute;
+	display:flex;
+	flex-direction: column;
+	margin:auto;
+	text-align:center;
+	width:30%;
+	height:450px;
+	z-index:5;
+	background: white;
+	color:black;
+}
+p{
+	display:block;
+}
+.respons{
+	margin:auto;
+	margin-left:5px;
+	margin-bottom:5px;
+	width:100px;
+	height:30px;
+	border-radius:5px;
+	background-color:gray;
+	color:black;
+}
+input{
+	margin:auto;
+	width:200px;
+	height:30px;
 }

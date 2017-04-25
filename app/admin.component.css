@@ -1,0 +1,24 @@
+.admin{
+	text-align:center; 
+}
+.hot{
+	text-align:center; 
+}
+.title{
+	font-size:28px;
+}
+table{
+	margin:auto;
+	margin-top:50px;
+	margin-bottom:50px;
+	text-align:center;
+}
+table, th, td {
+    border: 1px solid black;
+	 border-collapse: collapse;
+}
+
+ht,td{
+	width:200px;
+	height:30px;
+}

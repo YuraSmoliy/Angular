@@ -10,42 +10,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var hot_trevel_service_1 = require("./hot-trevel.service");
-var HotComponent = (function () {
-    function HotComponent(hotTrevelService) {
+var AdminComponent = (function () {
+    function AdminComponent(hotTrevelService) {
         this.hotTrevelService = hotTrevelService;
         this.items = [];
-        this.displayBuyForm = false;
     }
-    /*addItem(url:string, name: string, cost: number){
-         
-        this.hotTrevelService.addData(url, name, cost);
-    }*/
-    HotComponent.prototype.ngOnInit = function () {
+    AdminComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.hotTrevelService.getData().subscribe(function (data) { return _this.items = data; });
     };
-    ;
-    HotComponent.prototype.createBuyForm = function (item) {
-        this.elem = item;
-        this.displayBuyForm = true;
+    AdminComponent.prototype.addElem = function (url, name, cost) {
+        this.hotTrevelService.addData(url, name, +cost);
     };
-    HotComponent.prototype.canselBuy = function () {
-        this.displayBuyForm = false;
+    AdminComponent.prototype.deleteHotTour = function (item) {
+        this.hotTrevelService.deleteDate(item);
     };
-    HotComponent.prototype.bookHotTour = function () {
-        this.canselBuy();
-        this.dateBook = new Date(Date.parse(this.date));
-        alert(this.dateBook);
-    };
-    return HotComponent;
+    return AdminComponent;
 }());
-HotComponent = __decorate([
+AdminComponent = __decorate([
     core_1.Component({
-        selector: 'hot-app',
-        templateUrl: 'app/hot.component.html',
-        styleUrls: ['app/hot.component.css']
+        selector: 'admin-app',
+        templateUrl: 'app/admin.component.html',
+        styleUrls: ['app/admin.component.css']
     }),
     __metadata("design:paramtypes", [hot_trevel_service_1.HotTrevelService])
-], HotComponent);
-exports.HotComponent = HotComponent;
-//# sourceMappingURL=hot.component.js.map
+], AdminComponent);
+exports.AdminComponent = AdminComponent;
+//# sourceMappingURL=admin.component.js.map

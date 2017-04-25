@@ -1,0 +1,59 @@
+<div class="admin">
+	<p class="title">Admin page</p>
+	<div class="hot">
+		<p class="chapter">Hot tours</p>
+		
+		<table>
+			<tr>
+				<th>
+					URL
+				</th>
+				<th>
+					Name
+				</th>
+				<th>
+					cost
+				</th>
+				<th>
+					delete
+				</th>
+			</tr>
+			<tr *ngFor="let item of items">
+				
+				<td>
+					{{item.url}}
+				</td>
+				<td>
+					{{item.name}}
+				</td>
+				<td>
+					{{item.cost}}
+				</td>
+				<td>
+					<button (click)="deleteHotTour(item)">delete</button>
+				</td>
+			</tr>
+		</table>
+		
+		<label>URL</label>
+		<input [(ngModel)]='url'>
+		<label>Name</label>
+		<input [(ngModel)]='name'>
+		<label>Cost</label>
+		<input [(ngModel)]='cost'>
+		<button (click)="addElem(url,name,cost)">add hot tour</button>
+	</div>
+	<div>
+		<p>Tours</p>
+		<label>URL</label>
+		<input>
+		<label>Name</label>
+		<input>
+		<label>Cost</label>
+		<input>
+		<button>add tours</button>
+	</div>
+	<div>
+		<label></label>
+	</div>
+</div>

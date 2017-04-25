@@ -4,7 +4,7 @@ import { FormGroup, FormControl, Validators} from '@angular/forms';
  
 @Component({
     selector: 'contact-app',
-	styleUrls: ['app/contact.component.css']
+	styleUrls: ['app/contact.component.css'],
     /*styles: [`
         input.ng-touched.ng-invalid {border:solid red 2px;}
         input.ng-touched.ng-valid {border:solid green 2px;}

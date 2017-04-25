@@ -15,22 +15,28 @@ require("rxjs/add/operator/map");
 var HotTrevelService = (function () {
     function HotTrevelService(http) {
         this.http = http;
+        this.items = [];
     }
     HotTrevelService.prototype.getData = function () {
+        var _this = this;
         return this.http.get('app/hot.json')
             .map(function (resp) {
             var hotsList = resp.json().data;
-            var hots = [];
+            //let hots:Hot[]=[];
             for (var index in hotsList) {
                 var hot = hotsList[index];
-                hots.push({ url: hot.url, name: hot.name, cost: hot.cost });
+                _this.items[index] = new hot_1.Hot(hot.url, hot.name, hot.cost);
             }
-            return hots;
+            //this.items=hots;
+            return _this.items;
         });
     };
     ;
     HotTrevelService.prototype.addData = function (url, name, cost) {
-        this.data.push(new hot_1.Hot(url, name, cost));
+        this.items.push(new hot_1.Hot(url, name, cost));
+    };
+    HotTrevelService.prototype.deleteDate = function (item) {
+        this.items.splice(this.items.indexOf(item), 1);
     };
     return HotTrevelService;
 }());

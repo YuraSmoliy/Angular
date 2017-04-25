@@ -15,7 +15,7 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: "\n\t\t\t\t<heder-app></heder-app>\n\t\t\t\t<hot-app></hot-app>\n\t\t\t\t<tours-app></tours-app>\n\t\t\t\t<contact-app></contact-app>\n\t\t\t\t<label>\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0438\u043C\u044F:</label>\n                 <input [(ngModel)]=\"name\" placeholder=\"name\">\n                 <h1>\u0414\u043E\u0431\u0440\u043E \u043F\u043E\u0436\u0430\u043B\u043E\u0432\u0430\u0442\u044C {{name}}!</h1>\n\t\t\t\t <footer-app></footer-app>\n\t\t\t\t ",
+        template: "\n\t\t\t\t<heder-app></heder-app>\n\t\t\t\t<hot-app></hot-app>\n\t\t\t\t<tours-app></tours-app>\n\t\t\t\t<contact-app></contact-app>\n\t\t\t\t<admin-app></admin-app>\n\t\t\t\t <footer-app></footer-app>\n\t\t\t\t ",
         styles: ["h2, p {color:#333;}"]
     })
 ], AppComponent);

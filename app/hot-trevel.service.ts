@@ -8,22 +8,28 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class HotTrevelService{
 	constructor(private http:Http){}
+	items : Hot[]=[];
 	getData(): Observable<Hot[]>{
 		return this.http.get('app/hot.json')
 							.map((resp:Response)=>{
 								
 								let hotsList=resp.json().data;
-								let hots:Hot[]=[];
+								//let hots:Hot[]=[];
 								for(let index in hotsList){
 									let hot=hotsList[index];
-									hots.push({url:hot.url, name:hot.name, cost:hot.cost});
+									this.items[index]=new Hot(hot.url, hot.name, hot.cost);
+									
 								}
-								return hots;
+								//this.items=hots;
+								return this.items;
 							}
 							);
 	};
+	
 	addData(url:string, name: string, cost: number){
-         
-        this.data.push(new Hot(url, name, cost));
+		this.items.push(new Hot(url,name,cost));
     }
+	deleteDate(item:Hot){
+		this.items.splice(this.items.indexOf(item),1);
+	}
 }

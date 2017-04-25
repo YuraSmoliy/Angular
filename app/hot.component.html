@@ -4,11 +4,21 @@
 	</div>
 	<div class="hotConteiner">
 		<div *ngFor="let item of items" class="hotElem">
-			<img [src]=item.url class="toursPicture">>
+			<img [src]=item.url class="toursPicture">
 			<p>name {{item.name}}</p>
 			<p>cost {{item.cost}}</p>
-			<button class="buy">BUY</button>
+			<button class="buy" (click)="createBuyForm(item)">BUY</button>
 			
+		</div>
+		<div  *ngIf="displayBuyForm" class="buyForm">
+					<img [src]=elem.url class="buyPicture">
+					<p>name {{elem.name}}</p>
+					<p>cost {{elem.cost}}</p>
+					<input type="date" name="date" [(ngModel)]="date"  >
+					<div>
+					<button (click)="bookHotTour()" class='respons'>OK</button>
+					<button (click)="canselBuy()" class='respons'>Cansel</button>
+					</div>
 		</div>
 	<div>
 </div>
