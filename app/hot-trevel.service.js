@@ -32,8 +32,17 @@ var HotTrevelService = (function () {
         });
     };
     ;
-    HotTrevelService.prototype.addData = function (url, name, cost) {
-        this.items.push(new hot_1.Hot(url, name, cost));
+    HotTrevelService.prototype.addData = function (url, name, cost, updateHot) {
+        if (updateHot != null) {
+            var elem = this.items.indexOf(updateHot);
+            this.items[elem].url = url;
+            this.items[elem].name = name;
+            this.items[elem].cost = cost;
+            updateHot = null;
+        }
+        else {
+            this.items.push(new hot_1.Hot(url, name, cost));
+        }
     };
     HotTrevelService.prototype.deleteDate = function (item) {
         this.items.splice(this.items.indexOf(item), 1);

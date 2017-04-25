@@ -37,7 +37,7 @@ export class HotComponent implements OnInit {
 	bookHotTour(){
 		
 		this.canselBuy();
-	   this.dateBook=new Date(Date.parse(this.date));
+		this.dateBook=new Date(Date.parse(this.date));
 		alert(this.dateBook);
 		
 	}

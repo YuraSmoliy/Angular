@@ -26,8 +26,19 @@ export class HotTrevelService{
 							);
 	};
 	
-	addData(url:string, name: string, cost: number){
+	addData(url:string, name: string, cost: number, updateHot:Hot){
+	   
+	if(updateHot!=null){	
+		let elem=this.items.indexOf(updateHot);
+		this.items[elem].url=url;
+		this.items[elem].name=name;
+		this.items[elem].cost=cost;
+		updateHot=null;
+		
+		}else{
 		this.items.push(new Hot(url,name,cost));
+		}
+		
     }
 	deleteDate(item:Hot){
 		this.items.splice(this.items.indexOf(item),1);

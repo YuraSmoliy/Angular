@@ -17,6 +17,9 @@
 				<th>
 					delete
 				</th>
+				<th>
+					update
+				</th>
 			</tr>
 			<tr *ngFor="let item of items">
 				
@@ -30,7 +33,10 @@
 					{{item.cost}}
 				</td>
 				<td>
-					<button (click)="deleteHotTour(item)">delete</button>
+					<button (click)="deleteHotTour(item)">dalete</button>
+				</td>
+				<td>
+					<button (click)="updeleteHotTour(item)">updalete</button>
 				</td>
 			</tr>
 		</table>
@@ -41,7 +47,8 @@
 		<input [(ngModel)]='name'>
 		<label>Cost</label>
 		<input [(ngModel)]='cost'>
-		<button (click)="addElem(url,name,cost)">add hot tour</button>
+		<button (click)="addElem(url,name,cost)">add hot tour/update</button>
+	
 	</div>
 	<div>
 		<p>Tours</p>
